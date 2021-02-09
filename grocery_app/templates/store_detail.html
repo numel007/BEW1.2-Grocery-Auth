@@ -20,17 +20,18 @@
 
 <h2>Edit Store</h2>
 
-<form>
+<form method='POST' action="{{ url_for('main.store_detail', store_id = store.id) }}">
+    {{ form.csrf_token }}
     <fieldset>
         <legend>Please enter your information:</legend>
 
+        {{ form.title.label }}
+        {{ form.title}}
 
+        {{ form.address.label }}
+        {{ form.address }}
 
-        <!-- TODO: Remove the next paragraph and use the `form` object passed in 
-            from the route to render a form. -->
-        <p><em>Form fields go here!</em></p>
-
-        <input type="submit" value="Submit">
+        {{ form.submit }}
     </fieldset>
 </form>
 
